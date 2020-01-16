@@ -9,14 +9,22 @@
         <script src="./script.js" async></script>
     </head>
     <body>
-        <form id="addTaskForm">
-            <input type="text" id="addTodo" class="input" />
-            <button id="addBtn" type="submit" class="button">Add task</button>   
+        <table id="contactsList">
+            <tr><th>Name</th><th>Surname</th><th>Phone</th><th>Action</th></tr>
+            <tr class="contacts-item"><td>Oleksandr</td><td>Masiuk</td><td>+38 123 456 78 90</td><td><button class="delete-btn">Delete</button></td></tr>
+        </table>
+
+        <form id="addContactsForm">
+            <tr><td> <input type="text" id="addContactName" class="input" placeholder="Name"/></td>
+                <td> <input type="text" id="addContactSurname" class="input" placeholder="Last Name"/></td>
+                <td> <input type="text" id="addContactNumber" class="input" placeholder="+38 XXX XXX XX XX"/></td> 
+                <button id="addBtn" type="submit" class="button">Add Data</button>
+            </tr>   
         </form>
         <ul id='list' class="border">
         </ul>
-        <script type="text/template" id="liTemplate" hidden>
-            <li>{{index}}</li>
-        </script>
+        <template id="tdTemplate">
+            <td>{{name}}</td><td>{{surname}}</td><td>{{numberPhone}}</td><td><button class="delete-btn">Delete</button></td>
+        </template>
     </body>
 </html>
